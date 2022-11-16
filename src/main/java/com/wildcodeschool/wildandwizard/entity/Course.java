@@ -12,12 +12,6 @@ public class Course {
     private Long id;
     private String name;
 
-    @ManyToMany
-    @JoinTable(name = "course_courses",
-            joinColumns = @JoinColumn(name = "course_1_id"),
-            inverseJoinColumns = @JoinColumn(name = "courses_2_id"))
-    private List<Course> courses = new ArrayList<>();
-
     @ManyToMany(mappedBy = "courses")
     private List<Wizard> wizards = new ArrayList<>();
 
